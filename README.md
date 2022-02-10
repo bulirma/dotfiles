@@ -1,3 +1,3 @@
 # My dot-files
 
-This consists of my configuration files and helper scripts.
+This repository consists of my configuration files and helper scripts.
