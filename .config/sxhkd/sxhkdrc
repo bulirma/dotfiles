@@ -1,0 +1,8 @@
+XF86Audio{Raise,Lower}Volume
+	amixer sset Master 5%{+,-}
+
+alt + shift + u
+	setxkbmap us
+
+alt + shift + c
+	setxkbmap cz qwerty
