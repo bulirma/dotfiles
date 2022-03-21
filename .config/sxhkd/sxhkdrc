@@ -1,8 +1,11 @@
 XF86Audio{Raise,Lower}Volume
 	amixer sset Master 5%{+,-}
+	sh ~/.config/scripts/status.sh
 
 alt + shift + u
 	setxkbmap us
+	sh ~/.config/scripts/status.sh
 
 alt + shift + c
 	setxkbmap cz qwerty
+	sh ~/.config/scripts/status.sh
