@@ -1,0 +1,30 @@
+URxvt.font: xft:Liberation Mono:size=12
+URxvt.scrollBar: false
+
+*.background: #000000
+*.foreground: #bedebe
+*.cursorColor: #1a8b12
+
+*.color0: #282828
+*.color8: #494949
+
+*.color1: #bb6a67
+*.color9: #ce7d7a
+
+*.color2: #5ada5a
+*.color10: #5aaa5a
+
+*.color3: #cc9206
+*.color11: #bfae3f
+
+*.color4: #0733d3
+*.color12: #3657d0
+
+*.color5: #8a688c
+*.color13: #7c1c83
+
+*.color6: #3d766e
+*.color14: #7ac3ba
+
+*.color7: #676867
+*.color15: #989998
