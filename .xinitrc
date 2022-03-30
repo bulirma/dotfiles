@@ -1,4 +1,5 @@
 ~/.local/bin/loopstatus.sh &
 xrdb ~/.Xresources &
-xwallpaper --focues ~/.local/share/wallpapers/fantasy.jpg &
+xwallpaper --focus ~/.local/share/wallpapers/fantasy.jpg &
+picom &
 exec dwm
