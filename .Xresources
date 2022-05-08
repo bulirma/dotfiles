@@ -26,6 +26,8 @@
 !*.color7: #676867
 !*.color15: #989998
 
+Xft.dpi: 96
+
 ! special
 *.foreground:   #ffffff
 *.background:   #000000
@@ -63,5 +65,5 @@
 *.color7:       #d3d7cf
 *.color15:      #eeeeec
 
-URxvt.font: xft:Liberation Mono:size=12
+URxvt.font: xft:monospace:size=12
 URxvt.scrollBar: false
