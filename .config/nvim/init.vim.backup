@@ -1,0 +1,12 @@
+let mapleader = " "
+
+map <tab>t :tabnew<CR>
+map <tab>p :tabp<CR>
+map <tab>n :tabn<CR>
+
+syntax on
+set encoding=utf-8
+set number
+set relativenumber
+set smartindent
+set wildmode=longest,list,full
