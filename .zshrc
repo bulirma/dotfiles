@@ -14,9 +14,10 @@ _comp_oprions+=(globdost)
 
 alias ls='ls --color'
 
-export PATH=$PATH:/home/boolda/go/bin
+export PATH=$PATH:$HOME/go/bin:$HOME/gems/bin
 export EDITOR=nvim
 export BROWSER=firefox
+export GEM_HOME=$HOME/gems
 
 bindkey -v
 export KEYTIMEOUT=1
