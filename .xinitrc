@@ -1,5 +1,4 @@
-~/.local/bin/loopstatus.sh &
+[ "$WM" = dwm ] && ~/.local/bin/loopstatus.sh &
 xrdb ~/.Xresources &
-xwallpaper --focus ~/.local/share/wallpapers/fantasy.jpg &
 picom &
-exec dwm
+exec $WM
