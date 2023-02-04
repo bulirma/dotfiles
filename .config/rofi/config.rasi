@@ -1,0 +1,9 @@
+configuration {
+	display-drun: "Programs: ";
+	display-window: "Windows: ";
+	modi: "drun,run,window";
+	show-icons: true;
+}
+
+//@theme "~/.config/rofi/themes/fire.rasi"
+@theme "~/.config/rofi/themes/gruvbox-dark.rasi"
