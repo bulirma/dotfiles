@@ -4,7 +4,7 @@ autoload -U colors && colors
 #precmd() { vcs_info }
 #zstyle ':vcs_info:*' formats '%{$fg[yellow]%}(%{$fg[blue]%}%b%{$fg[yellow]%})'
 
-PS1='%B%{$fg[yellow]%}[%{$fg[green]%}%~%{$fg[yellow]%}]%{$fg[red]%}$%{$reset_color%}%b '
+PS1="%B%{$fg[yellow]%}[%{$fg[green]%}%~%{$fg[yellow]%}]%{$fg[red]%}$%{$reset_color%}%b "
 
 mkdir -p ~/.cache/zsh
 HISTSIZE=10000
