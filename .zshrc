@@ -1,8 +1,10 @@
 autoload -U colors && colors
 
-source ~/.config/git-prompt.sh
-setopt PROMPT_SUBST
-PS1="%B%{$fg[yellow]%}[%{$fg[green]%}%~%{$fg[yellow]%}]%{$fg[blue]%}$(__git_ps1 '(%s)')%{$fg[red]%}$%{$reset_color%}%b "
+#autoload -Uz vcs_info
+#precmd() { vcs_info }
+#zstyle ':vcs_info:*' formats '%{$fg[yellow]%}(%{$fg[blue]%}%b%{$fg[yellow]%})'
+
+PS1='%B%{$fg[yellow]%}[%{$fg[green]%}%~%{$fg[yellow]%}]%{$fg[red]%}$%{$reset_color%}%b '
 
 mkdir -p ~/.cache/zsh
 HISTSIZE=10000
