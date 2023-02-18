@@ -1,2 +1,3 @@
 setxkbmap -option caps:swapescape
-exec bspwm
+[ -f ~/.local/share/wallpaper.jpg ] && xwallpaper --focus ~/.local/share/wallpaper.jpg
+exec herbstluftwm --locked
