@@ -6,8 +6,6 @@ hc() {
 
 hc emit_hook reload
 
-xsetroot -solid '#5a8e3a'
-
 hc keyunbind --all
 
 Alt=Mod1
