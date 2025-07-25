@@ -1,0 +1,3 @@
+[submodule ".config/mynvim"]
+	path = .config/mynvim
+	url = git@github.com:bulirma/mynvim.git
