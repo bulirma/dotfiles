@@ -1,0 +1,6 @@
+setxkbmap -option caps:swapescape
+xwallpaper --focus ~/.local/share/wallpaper/dark-cat-eyes.png
+dunst &
+udiskie -A -t &
+nm-applet &
+exec i3

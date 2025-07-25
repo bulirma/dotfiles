@@ -1,0 +1,5 @@
+[pycodestyle]
+count = False
+ignore = E112,E115,E128,E201,E202,E226,E231,E265,E301,E302,E303,E305,E402,E501,E722,E731,E741,W291,W293,W391,W504
+max-line-length = 160
+statistics = True

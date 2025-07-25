@@ -1,0 +1,8 @@
+configuration {
+	display-drun: "Programs: ";
+	display-window: "Windows: ";
+	modi: "drun,run,window";
+	show-icons: true;
+}
+
+@theme "themes/gruvbox-dark.rasi"
