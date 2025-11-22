@@ -5,19 +5,24 @@ autoload -U colors && colors
 setopt PROMPT_SUBST
 
 __virtualenv() {
-    [ -n "$VIRTUAL_ENV" ] && echo "($( basename "$VIRTUAL_ENV" ))"
+    [ -n "$VIRTUAL_ENV" ] && echo "$( basename "$VIRTUAL_ENV" )"
 }
 
 precmd() {
 	EC="$?"
 	status_part=""
 	if [ "$EC" != "0" ]; then
-		status_part="%{$fg[red]%}($EC)"
+		status_part="%F{red}| $EC|"
 	fi
-    print -rP "%B%{$fg[yellow]%}[%{$fg[green]%}%~%{$fg[yellow]%}]$status_part%{$reset_color%}%b"
-    PROMPT="%B%{$fg[red]%}$(__virtualenv)%{$fg[blue]%}$(__git_ps1 "(%s)")%{$fg[yellow]%}>%{$reset_color%}%b "
+    virtenv=""
+    if [ -n "$(__virtualenv)" ]; then
+        virtenv="%f| $(__virtualenv)|"
+    fi
+    print -rP "%B%F{yellow} %F{green}%~%F{yellow}|$virtenv%F{blue}$(__git_ps1 "|\uE725 %s|")$status_part%f%b"
+    PROMPT="%B%F{yellow}>%f%b "
 	unset EC
 	unset status_part
+    unset virtenv
 }
 
 mkdir -p ~/.cache/zsh
@@ -51,23 +56,41 @@ lfcd() {
 
 pressmd() {
     if [[ -z "$1" ]]; then
-        echo "Usage: pressmd <md_file>"
+        echo "Usage: pressmd <md_file>" >&2
         return 1
     fi
     if [[ ! -f "$1" ]]; then
-        echo "Error: File '$1' does not exist."
+        echo "Error: File '$1' does not exist." >&2
         return 1
     fi
     output="$( basename "$1" .md ).pdf"
     echo "$1" | entr pandoc -o "$output" "$1"
 }
 
-#cds() {
-#    if [ "$1" = '-c' ]; then
-#        $EDITOR ~/.local/bin/generic/cds.sh
-#    else
-#        cd "$( ~/.local/bin/generic/cds.sh )"
-#    fi
-#}
+wttr() {
+    if [[ $# = 0 ]]; then
+        curl 'wttr.in'
+        return 0
+    elif [[ $# = 1 ]]; then
+        curl "wttr.in/$1"
+        return 0
+    fi
+    if [[ $1 = '-l' ]]; then
+        lang="$2"
+        [[ $# = 3 ]] && city=$3
+    elif [[ $2 = '-l' ]]; then
+        lang="$3"
+        [[ $# = 3 ]] && city=$1
+    fi
+    req='wttr.in'
+    if [[ -n $city ]]; then
+        req="$req/$city"
+    fi
+    if [[ -n $lang ]]; then
+        req="$req?lang=$lang"
+    fi
+    curl "$req"
+}
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/nvm/init-nvm.sh
